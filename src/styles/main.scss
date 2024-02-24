@@ -1,0 +1,85 @@
+@use 'variaveis';
+@use 'hero';
+@use 'streamings';
+
+@font-face {
+    font-family: Anta;
+    src: url(../../assets/fonts/Anta-Regular.ttf);
+    font-weight: 400;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Anta, sans-serif;
+    list-style: none;
+}
+
+body {
+    background-color: variaveis.$corDeFundo;
+}
+
+
+
+.image-text-section {
+    padding: 6vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    overflow: hidden;
+
+    
+
+    @media (max-width: 768px) {
+        display: flex;
+        background-image: url(../images/leo_logo.webp);
+        picture {
+            display: none;
+        }
+    }
+
+    &__text-container {
+        p {
+            font-size: 2vw;
+            text-shadow: 2px 0 #c9c9c9, -2px 0 #c9c9c9, 0 2px #c9c9c9, 0 -2px #c9c9c9,
+                1px 1px #c9c9c9, -1px -1px #c9c9c9, 1px -1px #c9c9c9, -1px 1px #c9c9c9;
+            @media (max-width: 768px) {
+                font-size: 4vw;
+            }
+        }
+    }
+
+    &--image-full-width {
+        display: block;
+        position: relative;
+        
+        img {
+            max-width: 90%;
+        }
+        
+        &__text-container {
+            position: absolute;
+            top: 0;
+            left: 20%;
+            height: 100%;
+            width: calc(50% - 5.6vw);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            p {
+                color: variaveis.$corTextoSecundario;
+            }
+
+            @media (max-width: 768px) {
+                position: relative;
+                left: 0;
+                width: 100%;
+
+            }
+        }
+    }
+
+    
+}
